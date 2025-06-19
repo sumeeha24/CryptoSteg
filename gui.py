@@ -1,28 +1,10 @@
-print("Launching CryptoSteg GUI...")
-
-import tkinter as tk
-root = tk.Tk()
-root.mainloop()
-import tkinter as tk
-
-print("Launching GUI...")
-
-root = tk.Tk()
-root.title("CryptoSteg")
-root.geometry("300x150")
-
-label = tk.Label(root, text="CryptoSteg GUI is running!", font=("Arial", 12))
-label.pack(pady=40)
-
-root.mainloop()
-
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from steg import hide_data_in_image, extract_data_from_image
 from crypto import encrypt_message, decrypt_message
 
 class CryptoStegGUI:
-    def _init_(self, master):
+    def __init__(self, master):
         self.master = master
         master.title("🔐 CryptoSteg")
 
@@ -82,7 +64,8 @@ class CryptoStegGUI:
         except Exception as e:
             messagebox.showerror("Decryption Failed", str(e))
 
-if _name_ == "_main_":
+if __name__ == "__main__":
+    print("Launching CryptoSteg GUI...")
     root = tk.Tk()
     gui = CryptoStegGUI(root)
-    root.mainloop()
+    root.mainloop()

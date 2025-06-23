@@ -18,7 +18,9 @@ def hide_data_in_image(image_path: str, data: bytes, output_path: str):
         raise ValueError("Message too long to hide in image")
 
     for i, bit in enumerate(bits):
-        flat_img[i] = (flat_img[i] & ~1) | bit
+        flat_img[i] = (flat_img[i] & np.uint8(254)) | np.uint8(bit)
+
+
 
     new_img = flat_img.reshape(img_arr.shape)
     Image.fromarray(new_img.astype(np.uint8)).save(output_path)

@@ -1,4 +1,5 @@
-cryptography
-pillow
-numpy
-tk
+<<<<<<< HEAD
+Your local version
+=======
+Remote version
+>>>>>>> origin/main

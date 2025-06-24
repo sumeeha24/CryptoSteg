@@ -3,3 +3,7 @@ Your local version
 =======
 Remote version
 >>>>>>> origin/main
+pillow
+cryptography
+numpy
+
